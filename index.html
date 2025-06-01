@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="雨云,云服务器,优惠券,折扣,65折优惠券,新用户优惠,续费优惠,服务器优惠">
+    <meta name="description" content="雨云专属优惠券分享 - 新用户注册最高可获65折优惠券，支持叠加官方年付7折优惠，多种优惠码随机分配，公平公正。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雨云优惠券 - 新用户注册领取65折优惠券 | 专属推广</title>
+    
+    <!-- Open Graph 元数据 -->
+    <meta property="og:title" content="雨云优惠券 - 新用户注册领取65折优惠券">
+    <meta property="og:description" content="雨云专属优惠券分享，新用户注册可获65折优惠券，续费9折，支持叠加官方年付7折优惠">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "雨云优惠券",
+        "description": "新用户注册最高可获65折优惠券，续费9折优惠",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY",
+            "availability": "https://schema.org/InStock",
+            "url": "https://your-domain.com/"
+        },
+        "brand": {
+            "@type": "Brand",
+            "name": "雨云"
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7ec 100%);
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 10px auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, rgba(255, 215, 0, 0.3) 60%);
+            font-weight: bold;
+            padding: 0 5px;
+        }
+        
+        .coupon-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .coupon-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid #3a7bd5;
+        }
+        
+        .coupon-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .coupon-card:nth-child(2) {
+            border-top-color: #00c853;
+        }
+        
+        .coupon-card:nth-child(3) {
+            border-top-color: #ff4081;
+        }
+        
+        .discount-badge {
+            font-size: 2.2rem;
+            color: #2b8cf0;
+            font-weight: 800;
+            margin: 15px 0;
+            background: linear-gradient(to right, #3a7bd5, #00d2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .coupon-code {
+            background: #f0f8ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-weight: 600;
+            border: 1px dashed #2b8cf0;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .instructions-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .notice {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #ff9800;
+        }
+        
+        .notice h3 {
+            color: #ff6d00;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .notice p {
+            margin: 10px 0;
+        }
+        
+        .action-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .action-buttons {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn {
+            background: #2d8cf0;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(58, 123, 213, 0.4);
+        }
+        
+        .fcc-btn {
+            background: red;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+        
+        .fcc-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 65, 108, 0.4);
+        }
+        
+        .seo-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #4caf50;
+        }
+        
+        .seo-title {
+            font-size: 1.8rem;
+            color: #3a7bd5;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .seo-content {
+            line-height: 1.8;
+        }
+        
+        .seo-keyword {
+            font-weight: 700;
+            color: #ff6d00;
+            position: relative;
+        }
+        
+        .seo-keyword::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: rgba(255, 215, 0, 0.3);
+            z-index: -1;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: modalAppear 0.5s ease;
+        }
+        
+        @keyframes modalAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .center {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .tips {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: inline-block;
+            max-width: 800px;
+            font-size: 1rem;
+        }
+        
+        .logo-link {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-link img {
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3a7bd5;
+            margin: 10px 0;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .instructions-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .coupon-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>雨云优惠券（专属推广）</h1>
+        <p>新用户注册最高可获得<span class="highlight">65折优惠券</span>！</p>
+        <p>多优惠码随机分配，公平公正</p>
+        <p>均支持"叠加官方年付7折"，年付＝月价×12×0.7（官方）×0.8</p>
+    </div>
+    
+    <div class="stats-container">
+        <div class="stat-card">
+            <div class="stat-value">65% OFF</div>
+            <div class="stat-label">最高折扣</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">5000+</div>
+            <div class="stat-label">用户已领取</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">7*24</div>
+            <div class="stat-label">技术支持</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">99.9%</div>
+            <div class="stat-label">服务器可用性</div>
+        </div>
+    </div>
+    
+    <div class="coupon-container">
+        <div class="coupon-card">
+            <div class="discount-badge">八折新购券</div>
+            <div class="coupon-code">（全部可用）</div>
+            <p>适用于首次购买云服务器</p>
+        </div>
+        <div class="coupon-card">
+            <div class="discount-badge">九折续费券</div>
+            <div class="coupon-code">（全部可用）</div>
+            <p>适用于后续续费使用</p>
+        </div>
+        <div class="coupon-card">
+            <div class="discount-badge">六五折通用券</div>
+            <div class="coupon-code">（部分优惠码可用）</div>
+            <p>特殊活动期间可用</p>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="instructions-container">
+            <div class="notice">
+                <h3>使用说明.1</h3>
+                <p>1. 点击注册按钮自动带码<br>(提示正在走'优惠通道注册')</p>
+                <p>2. 系统将随机分配优惠码</p>
+                <p>3. 填写账号密码，点击注册</p>
+                <p>3. 兑换专属优惠券,请至<a style="text-decoration: none;" href="https://app.rainyun.com/account/reward/store">【雨云官网>积分商城】</a></p>
+                <p>PS：所有操作(购买/注册/客服)，均在雨云官网rainyun.com操作</p>
+            </div>
+            <div class="notice">
+                <h3>使用说明.2</h3>
+                <p>我只有（发优惠券+通知权限），无法操作-您的任何信息/产品。</p>
+                <p>就算我跑路不干了，<br>您除了（无法领取我的专属优惠券），无任何影响。</p>
+                <p>大部分优惠券有效期100天</p>
+                <p>产品支持7天无理由退款，余额随时可退</p>
+                <p>如有问题请发起工单处理</p>
+                <p><a style="text-decoration: none;" href="https://space.bilibili.com/178116180/lists/1536032?type=season">雨云视频合集<br>（测试/退款/换机/使用-等教程）</a></p>
+            </div>
+        </div>
+        
+        <div class="action-section">
+            <div class="action-buttons">
+                <a href="javascript:void(0);" class="logo-link" onclick="redirectToRegDirectly()">
+                    <img src="20250128075417566.png" alt="雨云优惠券注册入口" width="180">
+                </a>
+                <button class="btn" onclick="showModal('#')">立即注册</button>
+                <button class="fcc-btn" onclick="location.href='https://forum.rainyun.com/t/topic/7131'">注销账户</button>
+            </div>
+            
+            <div class="seo-section">
+                <h2 class="seo-title">雨云优惠券使用指南</h2>
+                <div class="seo-content">
+                    <p><strong>如何获取雨云<span class="seo-keyword">65折优惠券</span>？</strong> 新用户注册时通过本页面的专属链接注册，系统将随机分配优惠码，享受超值折扣。</p>
+                    <p><strong>优惠券使用规则：</strong> 八折新购券适用于首次购买云服务器产品，九折续费券适用于后续续费，六五折通用券可在各种需求中使用。</p>
+                    <p><strong>叠加优惠说明：</strong> 雨云优惠券可叠加官方年付7折优惠，双重折扣让您享受更低价格。计算公式：月价 × 12 × 0.7（官方年付折扣）× 0.8（优惠券折扣）。</p>
+                    <p><strong>为什么选择雨云？</strong> 雨云提供高性价比云服务器，稳定可靠的云计算服务，24小时技术支持，是个人开发者和小型企业上云的理想选择。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3>🎉 优惠码已自动复制！</h3>
+            <p>将在注册页面自动填写优惠码</p>
+            <p>完成注册后请至积分商城兑换</p>
+            <div style="margin-top: 30px;">
+                <button class="btn" onclick="redirectToReg()" style="margin-right: 15px;">前往注册</button>
+                <button class="fcc-btn" onclick="closeModal()">暂不注册</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="center">
+        <div class="tips"> 
+            感谢<a style="text-decoration: none;" href="https://re.xcdream.com/"> DP次元 </a>提供的网页模板 &nbsp;&nbsp;|&nbsp;&nbsp;
+            本网站云计算服务由<a style="text-decoration: none;" href="https://www.rainyun.com/"> 雨云 </a>提供！
+        </div>
+    </div>
+
+    <script>
+        // 定义多个邀请链接
+        const inviteLinks = [
+            'https://www.rainyun.com/YuBan_',
+            'https://www.rainyun.com/dp712_',
+            'https://www.rainyun.com/mc_',
+            'https://www.rainyun.com/jly_',
+            'https://www.rainyun.com/xyn_'
+        ];
+
+        // 获取随机邀请链接
+        function getRandomInviteLink() {
+            const randomIndex = Math.floor(Math.random() * inviteLinks.length);
+            return inviteLinks[randomIndex];
+        }
+
+        function copyCoupon(code) {
+            navigator.clipboard.writeText(code)
+               .then(()=>alert('优惠码已复制:'+code))
+               .catch(()=>prompt('请手动复制代码:',code))
+        }
+        
+        let currentCode = "";
+        function showModal(code){
+            currentCode = code;
+            navigator.clipboard.writeText(code);
+            document.getElementById('modal').style.display = 'flex';
+        }
+        
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        
+        // 从模态框跳转
+        function redirectToReg() {
+            location.href = getRandomInviteLink();
+        }
+        
+        // 直接跳转（用于图片点击）
+        function redirectToRegDirectly() {
+            location.href = getRandomInviteLink();
+        }
+        
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) closeModal();
+        });
+        
+        // 关闭模态框的按键事件
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
